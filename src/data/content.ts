@@ -2,11 +2,11 @@ import {
   SiReact,
   SiTypescript,
   SiNodedotjs,
-  SiFastapi,
   SiPostgresql,
   SiTailwindcss,
-  SiN8N,
   SiDocker,
+  SiGit,
+  SiPython,
 } from 'react-icons/si';
 
 export const heroSentences = [
@@ -18,16 +18,16 @@ export const heroSentences = [
 ];
 
 export const aboutText =
-  "Je suis Tyméo MERCIER, étudiant BTS SIO SLAM en route vers une Licence IA. Mon objectif : rejoindre un écosystème tech pour participer au déploiement et l'utilisation d'intelligence artificielle";
+  "Je suis Tyméo MERCIER, étudiant BTS SIO SLAM en route vers une Licence IA. Mon objectif : devenir développeur IA pour participer au déploiement et l'utilisation d'intelligence artificielle dans des solutions concrètes.";
 
 export const skills = [
-  { name: 'React', progress: 70, status: 'En cours', icon: SiReact, accent: '#5ed3f3' },
+  { name: 'React', progress: 70, status: 'Maîtrisé', icon: SiReact, accent: '#5ed3f3' },
   { name: 'TypeScript', progress: 65, status: 'En cours', icon: SiTypescript, accent: '#3578c6' },
   { name: 'Node.js', progress: 60, status: 'En cours', icon: SiNodedotjs, accent: '#6abf4b' },
-  { name: 'FastAPI', progress: 55, status: 'À renforcer', icon: SiFastapi, accent: '#02998b' },
   { name: 'PostgreSQL', progress: 72, status: 'Maîtrisé', icon: SiPostgresql, accent: '#2f5e9f' },
   { name: 'Tailwind CSS', progress: 75, status: 'Maîtrisé', icon: SiTailwindcss, accent: '#38bdf8' },
-  { name: 'n8n', progress: 58, status: 'En cours', icon: SiN8N, accent: '#f97362' },
+  { name: 'Git', progress: 70, status: 'Maîtrisé', icon: SiGit, accent: '#f05032' },
+  { name: 'POO', progress: 80, status: 'Maîtrisé', icon: SiPython, accent: '#3776ab' },
   { name: 'Docker', progress: 50, status: 'En cours', icon: SiDocker, accent: '#0db7ed' },
 ];
 
@@ -69,7 +69,7 @@ export const roadmap = [
   },
   {
     label: 'Stockholm',
-    detail: 'Rejoindre Spotify / Klarna / Northvolt pour builder des expériences data-driven.',
+    detail: "Rejoindre Spotify / Klarna / Northvolt pour travailler dans de l'IA ou de la data",
   },
 ];
 

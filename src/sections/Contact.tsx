@@ -6,7 +6,7 @@ export const Contact = () => (
     data-section="contact"
     className="panel flex flex-col items-center justify-center gap-6 text-center"
   >
-    <h2 className="font-display text-3xl text-[color:var(--text-primary)] md:text-4xl">On construit ensemble ?</h2>
+    <h2 className="font-display text-3xl text-[color:var(--text-primary)] md:text-4xl">Me contacter</h2>
     <p className="max-w-2xl text-[color:var(--text-muted)]">
       Toujours partant pour parler d’automatisation, de data ou d'IA.
     </p>
