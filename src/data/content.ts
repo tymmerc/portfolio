@@ -26,7 +26,7 @@ export const heroSentences = [
 /* ── About ────────────────────────────────────────────── */
 
 export const aboutText =
-  "Je suis Tyméo MERCIER, diplômé d'un BTS SIO SLAM et en formation Concepteur Développeur d'Applications (CDA). En parallèle, je travaille déjà en freelance : je conçois et je maintiens des sites et des outils pour de vrais clients. Ce qui me motive le plus, c'est d'intégrer de l'IA dans des solutions concrètes.";
+  "Je suis Tyméo MERCIER, diplômé d'un BTS SIO SLAM et en formation chez Aflokkat, dans le parcours CLIC (Conception logicielle, IA & cybersécurité). En parallèle, je travaille déjà en freelance : je conçois et je maintiens des sites et des outils pour de vrais clients. Ce qui me motive le plus, c'est d'intégrer de l'IA dans des solutions concrètes.";
 
 /* ── Skills ───────────────────────────────────────────── */
 
@@ -282,7 +282,7 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   { name: 'BTS SIO SLAM', issuer: 'Éducation nationale', status: 'obtained' },
-  { name: "Titre pro Concepteur Développeur d'Applications", issuer: 'Mira, CampusPlex', status: 'in_progress' },
+  { name: 'Parcours CLIC : conception logicielle, IA & cybersécurité', issuer: 'Aflokkat (ESIA)', status: 'in_progress' },
   { name: 'PIX', issuer: 'PIX', status: 'obtained' },
   { name: 'MOOC SecNumAcadémie', issuer: 'ANSSI', status: 'obtained' },
   { name: 'Azure AI Fundamentals', issuer: 'Microsoft', status: 'obtained' },
@@ -318,8 +318,8 @@ export const onlinePresence = [
 
 export const roadmap = [
   {
-    label: 'Titre CDA',
-    detail: "Formation Concepteur Développeur d'Applications en cours, avec Blindz comme projet fil rouge. Jury en février 2027.",
+    label: 'Parcours CLIC',
+    detail: "Formation conception logicielle, IA & cybersécurité chez Aflokkat, avec Blindz comme projet fil rouge. Jury en février 2027.",
   },
   {
     label: 'Freelance',

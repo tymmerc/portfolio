@@ -4,12 +4,13 @@ import { About } from './sections/About';
 import { Contact } from './sections/Contact';
 import { Hero } from './sections/Hero';
 import { Projects } from './sections/Projects';
+import { Roadmap } from './sections/Roadmap';
 import { Skills } from './sections/Skills';
 import { VeilleCerts } from './sections/VeilleCerts';
 import { useScrollSnap } from './hooks/useScrollSnap';
 
 const App = () => {
-  const sectionIds = useMemo(() => ['hero', 'about', 'skills', 'projects', 'veille', 'contact'], []);
+  const sectionIds = useMemo(() => ['hero', 'about', 'skills', 'projects', 'veille', 'roadmap', 'contact'], []);
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
   const [currentSection, setCurrentSection] = useState('hero');
   const containerRef = useScrollSnap(sectionIds.length, (index) => {
@@ -43,6 +44,7 @@ const App = () => {
           { id: 'skills', label: 'Skills' },
           { id: 'projects', label: 'Projets' },
           { id: 'veille', label: 'Veille' },
+          { id: 'roadmap', label: 'Roadmap' },
           { id: 'contact', label: 'Contact' },
         ]}
         currentSection={currentSection}
@@ -59,6 +61,7 @@ const App = () => {
         <Skills />
         <Projects />
         <VeilleCerts />
+        <Roadmap />
         <Contact />
       </div>
     </div>
