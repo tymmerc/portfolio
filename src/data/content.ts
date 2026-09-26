@@ -26,7 +26,7 @@ export const heroSentences = [
 /* ── About ────────────────────────────────────────────── */
 
 export const aboutText =
-  "Je suis Tyméo MERCIER, étudiant BTS SIO SLAM en route vers une Licence IA. Mon objectif : devenir développeur IA pour participer au déploiement et à l'intégration d'intelligence artificielle dans des solutions concrètes.";
+  "Je suis Tyméo MERCIER, diplômé d'un BTS SIO SLAM et en formation Concepteur Développeur d'Applications (CDA). En parallèle, je travaille déjà en freelance : je conçois et je maintiens des sites et des outils pour de vrais clients. Ce qui me motive le plus, c'est d'intégrer de l'IA dans des solutions concrètes.";
 
 /* ── Skills ───────────────────────────────────────────── */
 
@@ -104,8 +104,22 @@ export const typeLabels: Record<ProjectType, string> = {
 
 export const projects: Project[] = [
   {
+    title: 'Blindz',
+    description: "Jeu de blind test sur ses propres playlists Spotify ou Deezer, sans rien préparer. Trois façons de jouer : autour d'une table, à distance, ou sur un seul téléphone. Multijoueur temps réel via Socket.IO, anti-triche côté serveur (la réponse n'est jamais envoyée aux joueurs avant la révélation) et suites E2E qui rejouent des soirées complètes. En production sur son propre domaine.",
+    stack: 'Next.js · TypeScript · Node.js · Express · PostgreSQL · Socket.IO · Docker',
+    status: 'active',
+    type: 'personal',
+    period: '10/2025 → en cours',
+    link: 'https://blindz.app',
+    github: 'https://github.com/tymmerc/blindify',
+    productions: [
+      { label: 'Jouer sur blindz.app', url: 'https://blindz.app' },
+      { label: 'Code source', url: 'https://github.com/tymmerc/blindify' },
+    ],
+  },
+  {
     title: 'Shimmer',
-    description: 'Vendeur IA conversationnel pour e-commerce. Recherche par similarité (embeddings multilingual-e5-base via ONNX), pipeline RAG, fallback Ollama qwen2.5. Architecture monorepo pnpm avec API Express, workers BullMQ et SDK embarquable. Déployé en production avec workers d\'indexation périodiques.',
+    description: "Vendeur IA conversationnel pour e-commerce : le client décrit ce qu'il cherche et Shimmer lui trouve le bon produit. Recherche par similarité (embeddings multilingual-e5-base via ONNX), pipeline RAG, fallback Ollama. Monorepo pnpm avec API Express, workers BullMQ et SDK embarquable avec consentement RGPD intégré. Le CA additionnel est prouvé par un groupe témoin, et la dépense IA est plafonnée par boutique. En bêta.",
     stack: 'Next.js · TypeScript · Express · Prisma · PostgreSQL · pgvector · Redis · BullMQ · Ollama · Claude API',
     status: 'wip',
     type: 'personal',
@@ -118,14 +132,27 @@ export const projects: Project[] = [
   },
   {
     title: 'Cors\'Air Aventure',
-    description: 'Reconstruction du site WordPress/Divi du client en Next.js sans changer le design. Hero vidéo lazy-load conditionnel, animations Framer Motion, App Router avec basePath. Phase 1 (design + contenu) validée. Reste l\'intégration Google Maps + SimplyBook et la migration prod.',
-    stack: 'Next.js 15 · Tailwind v4 · Framer Motion · TypeScript',
-    status: 'wip',
+    description: "Refonte du site d'une compagnie de balades en autogire en Corse du Sud. Le site WordPress/Divi a été reconstruit en Next.js sans changer le design, puis mis en ligne. J'en assure la maintenance : sauvegardes quotidiennes, monitoring de disponibilité avec alertes, correctifs et optimisations (vidéo d'accueil passée de 59 à 9 Mo).",
+    stack: 'Next.js 15 · Tailwind v4 · Framer Motion · TypeScript · Vercel',
+    status: 'active',
     type: 'pro',
     period: '04/2026 → en cours',
-    link: 'https://dev.tymmerc.eu/corsairaventure/',
+    link: 'https://corsairaventure.com',
     productions: [
-      { label: 'Preview client', url: 'https://dev.tymmerc.eu/corsairaventure/' },
+      { label: 'Site en ligne', url: 'https://corsairaventure.com' },
+    ],
+  },
+  {
+    title: 'Clearpath',
+    description: "Ma marque freelance : sites web, outils sur mesure et intégration d'IA pour les petites entreprises. C'est sous ce nom que je travaille avec mes clients. Site vitrine avec outils interactifs et témoignages.",
+    stack: 'Next.js · TypeScript · Tailwind · Framer Motion',
+    status: 'active',
+    type: 'pro',
+    link: 'https://tymmerc.eu/clearpath/',
+    github: 'https://github.com/tymmerc/clearpath',
+    productions: [
+      { label: 'Site en ligne', url: 'https://tymmerc.eu/clearpath/' },
+      { label: 'Code source', url: 'https://github.com/tymmerc/clearpath' },
     ],
   },
   {
@@ -200,18 +227,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: 'Blindify',
-    description: 'Jeu de blind-test musical connecté à l\'API Spotify. Système multijoueur temps réel via WebSocket, gestion de salons, scoring en direct. Base de données PostgreSQL pour la persistance des scores et des sessions.',
-    stack: 'Next.js · Node.js · PostgreSQL · Socket.IO',
-    status: 'wip',
-    type: 'personal',
-    period: '10/2025 → 05/2026',
-    github: 'https://github.com/tymmerc/blindify',
-    productions: [
-      { label: 'Code source', url: 'https://github.com/tymmerc/blindify' },
-    ],
-  },
-  {
     title: 'Quiz App',
     description: 'Application de quiz interactive déployée en production. Système de scoring, gestion des sessions utilisateur via cookies, interface responsive. Déployée sur VPS avec Next.js standalone et reverse proxy Nginx.',
     stack: 'Next.js · React · Tailwind · Nginx',
@@ -235,17 +250,6 @@ export const projects: Project[] = [
     link: 'https://tymmerc.eu/veille',
     productions: [
       { label: 'Application en ligne', url: 'https://tymmerc.eu/veille' },
-    ],
-  },
-  {
-    title: 'Clearpath',
-    description: 'Landing page pour une offre de services d\'intégration IA en entreprise. Design moderne avec animations Framer Motion et sections interactives.',
-    stack: 'Next.js · TypeScript · Tailwind · Framer Motion',
-    status: 'active',
-    type: 'personal',
-    github: 'https://github.com/tymmerc/clearpath',
-    productions: [
-      { label: 'Code source', url: 'https://github.com/tymmerc/clearpath' },
     ],
   },
 ];
@@ -277,6 +281,8 @@ export interface Certification {
 }
 
 export const certifications: Certification[] = [
+  { name: 'BTS SIO SLAM', issuer: 'Éducation nationale', status: 'obtained' },
+  { name: "Titre pro Concepteur Développeur d'Applications", issuer: 'Mira, CampusPlex', status: 'in_progress' },
   { name: 'PIX', issuer: 'PIX', status: 'obtained' },
   { name: 'MOOC SecNumAcadémie', issuer: 'ANSSI', status: 'obtained' },
   { name: 'Azure AI Fundamentals', issuer: 'Microsoft', status: 'obtained' },
@@ -293,7 +299,7 @@ export const onlinePresence = [
   },
   {
     platform: 'LinkedIn',
-    url: 'https://linkedin.com/in/tymmerc',
+    url: 'https://www.linkedin.com/in/tym%C3%A9o-mercier-aa9618265/',
     description: 'Profil professionnel et réseau',
   },
   {
@@ -312,16 +318,16 @@ export const onlinePresence = [
 
 export const roadmap = [
   {
-    label: 'Licence IA',
-    detail: "Poursuivre après le BTS pour solidifier l'IA, le ML et les maths appliquées.",
+    label: 'Titre CDA',
+    detail: "Formation Concepteur Développeur d'Applications en cours, avec Blindz comme projet fil rouge. Jury en février 2027.",
   },
   {
-    label: 'Master IA',
-    detail: "Approfondir l'IA générative, le machine learning et le design produit.",
+    label: 'Freelance',
+    detail: "Développer mon activité : plus de clients suivis dans la durée, du site vitrine à l'outil sur mesure.",
   },
   {
-    label: 'Chypre',
-    detail: "Lancer mon auto-entreprise et travailler en freelance dans l'IA et le développement.",
+    label: 'IA appliquée',
+    detail: "Continuer à brancher de l'IA utile dans de vrais produits, comme Shimmer pour l'e-commerce.",
   },
 ];
 
