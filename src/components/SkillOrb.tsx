@@ -7,19 +7,45 @@ type SkillOrbProps = {
   accent: string;
 };
 
-export const SkillOrb: FC<SkillOrbProps> = ({ name, progress, icon, accent }) => (
-  <div className="group flex flex-col items-center gap-3 text-center">
-    <div
-      className="relative flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border border-[color:var(--panel-border)] bg-white/80 shadow-panel transition-transform duration-300 group-hover:-translate-y-1 dark:bg-[color:var(--panel)]/80"
-      style={{ boxShadow: `0 15px 35px ${accent}1A` }}
-    >
-      <div className="text-4xl" style={{ color: accent }}>
-        {icon}
+const RADIUS = 24;
+const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
+
+export const SkillOrb: FC<SkillOrbProps> = ({ name, progress, icon, accent }) => {
+  const offset = CIRCUMFERENCE - (progress / 100) * CIRCUMFERENCE;
+
+  return (
+    <div className="group flex flex-col items-center gap-1.5 text-center">
+      <div className="relative flex h-16 w-16 items-center justify-center transition-transform duration-300 group-hover:-translate-y-1">
+        {/* SVG progress ring */}
+        <svg className="absolute inset-0 -rotate-90" viewBox="0 0 56 56">
+          <circle
+            cx="28"
+            cy="28"
+            r={RADIUS}
+            fill="none"
+            stroke="var(--panel-border)"
+            strokeWidth="3"
+          />
+          <circle
+            cx="28"
+            cy="28"
+            r={RADIUS}
+            fill="none"
+            stroke={accent}
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeDasharray={CIRCUMFERENCE}
+            strokeDashoffset={offset}
+            className="transition-[stroke-dashoffset] duration-700"
+          />
+        </svg>
+        {/* Icon center */}
+        <div className="text-xl" style={{ color: accent }}>
+          {icon}
+        </div>
       </div>
-      <div className="absolute inset-0 flex items-center justify-center rounded-full bg-[color:var(--text-primary)]/90 text-lg font-semibold text-black opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-        {progress}%
-      </div>
+      <p className="text-xs font-semibold text-[color:var(--text-primary)]">{name}</p>
+      <span className="text-[10px] tabular-nums text-[color:var(--text-muted)]">{progress}%</span>
     </div>
-    <p className="text-sm font-semibold text-[color:var(--text-primary)]">{name}</p>
-  </div>
-);
+  );
+};

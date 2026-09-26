@@ -17,10 +17,12 @@ export const Hero = () => {
     >
       <div className="relative flex w-full max-w-4xl justify-center rounded-[32px] border border-[color:var(--panel-border)] bg-[color:var(--panel)] py-14 shadow-panel">
         <div className="relative flex flex-col items-center gap-4">
-          <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white/90 text-2xl font-semibold text-[color:var(--text-primary)] shadow-panel">
-            TM
-          </div>
-          <p className="text-xs uppercase tracking-[0.6em] text-[color:var(--text-muted)]">Étudiant IA · Data</p>
+          <img
+            src="/cat.jpg"
+            alt="Tyméo MERCIER"
+            className="h-24 w-24 rounded-full object-cover shadow-panel ring-1 ring-[color:var(--panel-border)]"
+          />
+          <p className="text-xs uppercase tracking-[0.6em] text-[color:var(--text-muted)]">Étudiant IA · Développeur</p>
           <h1 className="font-display text-4xl leading-tight text-[color:var(--text-primary)] md:text-6xl">
             Hi, I’m Tyméo MERCIER
           </h1>

@@ -1,28 +1,40 @@
 import { SkillOrb } from '../components/SkillOrb';
-import { skills } from '../data/content';
+import { skills, aiTools } from '../data/content';
 
 export const Skills = () => (
   <section
     data-snap-section
     data-section="skills"
-    className="panel flex flex-col items-center justify-center gap-8 text-center"
+    className="panel flex flex-col items-center justify-center gap-5 text-center"
   >
-    <div className="space-y-3">
-      <h2 className="font-display text-3xl text-[color:var(--text-primary)] md:text-4xl">Progression d’un étudiant orienté Data</h2>
-    </div>
-    <p className="text-sm uppercase tracking-[0.3em] text-[color:var(--text-muted)]">Survole un skill pour voir mon niveau</p>
-    <div className="grid gap-6 md:grid-cols-4 max-w-4xl mx-auto">
+    <h2 className="font-display text-3xl text-[color:var(--text-primary)] md:text-4xl">Stack technique</h2>
+    <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">Technologies et niveaux de maîtrise</p>
+    <div className="grid grid-cols-4 gap-4 md:grid-cols-6 max-w-3xl mx-auto">
       {skills.map((skill) => (
-        <div key={skill.name} className="flex flex-col items-center gap-2">
-          <SkillOrb
-            name={skill.name}
-            progress={skill.progress}
-            accent={skill.accent}
-            icon={<skill.icon />}
-          />
-          <span className="text-xs uppercase tracking-[0.3em] text-[color:var(--text-muted)]">{skill.status}</span>
-        </div>
+        <SkillOrb
+          key={skill.name}
+          name={skill.name}
+          progress={skill.progress}
+          accent={skill.accent}
+          icon={<skill.icon />}
+        />
       ))}
+    </div>
+
+    {/* AI & Tools */}
+    <div className="w-full max-w-3xl space-y-3">
+      <h3 className="font-display text-lg text-[color:var(--text-primary)]">IA & Automatisation</h3>
+      <div className="flex flex-wrap justify-center gap-2">
+        {aiTools.map((tool) => (
+          <span
+            key={tool.name}
+            className="surface rounded-full px-4 py-1.5 text-xs font-medium text-[color:var(--text-primary)]"
+            title={tool.desc}
+          >
+            {tool.name}
+          </span>
+        ))}
+      </div>
     </div>
   </section>
 );
